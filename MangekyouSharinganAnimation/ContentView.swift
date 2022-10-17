@@ -13,16 +13,10 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
 struct ItachiUchiha: View {
     @State private var sharingan = false
     var body: some View {
-        ZStack{
+        ZStack {
             Color.red.opacity(1).edgesIgnoringSafeArea(.all)
             
             Image("MangekyouSharingan")
@@ -85,8 +79,15 @@ struct ParticleSystem: UIViewRepresentable {
         snowParticles.scaleRange = 0.05
         snowParticles.color = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
         particlesLayer.emitterCells = [snowParticles]
+        
         return host
     }
     
     func updateUIView(_ uiView: UIView, context: Context) {}
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
